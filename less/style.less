@@ -1,0 +1,156 @@
+@ec-red: #C74040;
+@ec-green: #55A887;
+
+@background: lighten(@ec-red,3%);
+@ctaBackground:@ec-green;
+
+
+body {
+  padding:0;
+  margin:0 ;
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+}
+
+body.fade{
+  background: darken(white, 25%);
+  transition: 0.3s;
+}
+
+.fade>div {
+    opacity: 0.3;
+    transition: 0.3s opacity;
+}
+#drift-widget-container {
+    opacity: 1 !important;
+}
+
+body>div {
+  padding: 0 15px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.hero {
+  /*min-height: 300px;*/
+  /*background: #5576a8;*/
+  background: @background;
+  color: #fff;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 15px;
+  position:relative;
+}
+
+.hero h1 {
+  padding-top: 20px;
+  line-height: 1.4;
+  font-size: 80px;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.hero h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.cta {
+  border: solid darken(@ctaBackground, 10%) 1px;
+  background-color: @ctaBackground;
+  color:#fff;
+  border-radius: 5px;
+  padding: 15px 75px;
+  margin-top: 20px;
+  display:inline-block;
+  text-decoration: none;
+  font-size:20px;
+}
+
+.cta:hover {
+  background-color: darken(@ctaBackground, 10%);
+}
+.sub {
+  color: #bbb;
+  margin: 0;
+}
+.sub a {
+  color: #fff;
+  font-weight:600;
+}
+
+.section-header{
+  margin-top: 30px;
+
+}
+
+.eigen {
+	font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+	margin-bottom:8px;
+}
+
+.code {
+	color:red;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+.threestep {
+    list-style-position: inside;
+    list-style: none;
+    margin:0 0 0 10%;
+    padding:0;
+}
+
+.threestep h4 {
+    margin: 25px 0 40px;
+}
+.threestep-one, .threestep-two, .threestep-three {
+    display: inline-block;
+    width: 20%;
+    margin: 0 0 10px  5%;
+    padding: 20px;
+    min-width: 250px;
+    min-height: 200px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: @background;
+    color: #fff;
+    /*border: solid 2px #C77171;*/
+}
+
+@media screen and (max-width:1200px) {
+    .threestep {
+        margin:0;
+    }
+}
+@media screen and (max-width:500px) {
+    .threestep {
+        margin:0;
+    }
+    .threestep-one, .threestep-two, .threestep-three {
+        display:block;
+        margin: 0 auto 10px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 16px;
+    }
+
+    .cta {
+        width:95%;
+        padding: 15px 0;
+        margin-left:2.5%;
+        margin-right:2.5%;
+    }
+}

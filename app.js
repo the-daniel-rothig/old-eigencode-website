@@ -1,4 +1,6 @@
 var express = require('express');
+var handlebars = require('express-handlebars');
+var expressLess = require('express-less');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -9,9 +11,13 @@ var routes = require('./routes/index');
 
 var app = express();
 
+app.engine('handlebars', handlebars({defaultLayout: 'main'}));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'handlebars');
+
+app.use('/stylesheets', expressLess(__dirname + '/less'));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
