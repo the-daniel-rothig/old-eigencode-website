@@ -25,7 +25,6 @@ app.use('/stylesheets', expressLess(__dirname + '/less'));
 
 app.use(function(req,res,next){
   if(req.headers['x-forwarded-proto'] != 'https' && process.env.NODE_ENV === 'production') {
-
     return req.method === "GET"
         ? res.redirect(['https://', req.get('Host'), req.url].join(''))
         : res.sendStatus('400');

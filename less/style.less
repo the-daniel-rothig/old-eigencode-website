@@ -6,7 +6,7 @@
 
 
 body {
-  padding:0;
+  padding:0 0 80px;
   margin:0 ;
   /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
   font-size: 14px;
@@ -18,15 +18,19 @@ body.fade{
   transition: 0.3s;
 }
 
-.fade>div {
+.fade>* {
     opacity: 0.3;
     transition: 0.3s opacity;
 }
 #drift-widget-container {
     opacity: 1 !important;
 }
+.scannable {
+    max-width:750px;
+    margin: auto;
+}
 
-body>div {
+body>* {
   padding: 0 15px;
 }
 
@@ -41,10 +45,20 @@ a {
   color: #fff;
   text-align: center;
   padding-top: 0;
-  padding-bottom: 15px;
+  padding-bottom: 25px;
   position:relative;
 }
 
+.page-header {
+  background: @background;
+  color: #fff;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  display:block;
+  font-weight: 500;
+  font-size:20px;
+  text-align:center;
+}
 .hero h1 {
   padding-top: 20px;
   line-height: 1.4;
@@ -74,7 +88,7 @@ a {
   background-color: darken(@ctaBackground, 10%);
 }
 .sub {
-  color: #bbb;
+  color: #ccc;
   margin: 0;
 }
 .sub a {
@@ -83,7 +97,7 @@ a {
 }
 
 .section-header{
-  margin-top: 30px;
+  padding-top: 30px;
 
 }
 
@@ -113,7 +127,7 @@ a {
 .threestep-one, .threestep-two, .threestep-three {
     display: inline-block;
     width: 20%;
-    margin: 0 0 10px  5%;
+    margin: 0 2.5% 10px  2.5%;
     padding: 20px;
     min-width: 250px;
     min-height: 200px;
@@ -130,6 +144,56 @@ a {
         margin:0;
     }
 }
+
+.quote {
+    max-width: 800px;
+    margin: 40px auto 10px;
+
+    &>svg {
+        float:left;
+        margin-right: 10px
+    }
+    &>p {
+        padding-top: 15px;
+    }
+
+    &>.citation {
+        color: #aaa;
+        padding:0;
+        text-align:right;
+        font-style: italic;
+    }
+
+
+    &:after {
+        content:'';
+        clear:both;
+    }
+}
+
+.image-border {
+    fill:darken(white, 10%);
+    stroke: @ctaBackground;
+    stroke-width: 2.5;
+}
+
+.bottom-cta{
+    color: darken(@ctaBackground, 10%);
+    text-align:center;
+
+    & a {
+        color: darken(@ctaBackground, 10%);
+        font-weight:600;
+    }
+}
+
+.back {
+    color: darken(@ctaBackground, 10%);
+    font-weight: 600;
+    &:before{ content: '\276e  '}
+}
+
+
 @media screen and (max-width:800px) {
     .threestep {
         margin:0;
@@ -152,5 +216,8 @@ a {
         padding: 15px 0;
         margin-left:2.5%;
         margin-right:2.5%;
+    }
+    .quote>p {
+        padding-top:0;
     }
 }

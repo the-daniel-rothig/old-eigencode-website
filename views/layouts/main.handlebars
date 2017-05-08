@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name=viewport content="width=device-width, initial-scale=1">
-    <title>eigencode</title>
+    <title>eigencode.io</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins" rel="stylesheet">
     <!-- Start of Async Drift Code -->
@@ -32,6 +32,7 @@
 
     <script>
     drift.on('ready',function(api){
+      api.widget.hide();
       drift.on('sidebarOpen', function() {document.body.className = "fade";});
       drift.on('sidebarClose', function() {document.body.className = ""});
     })
