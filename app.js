@@ -70,5 +70,11 @@ app.use(function(err, req, res, next) {
   });
 });
 
+if (process.env.NODE_ENV === 'production') {
+    setInterval(function() {
+        http.get("http://eigencode.herokuapp.com");
+    }, 300000);
+}
+
 
 module.exports = app;
