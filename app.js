@@ -24,15 +24,16 @@ app.use('/stylesheets', expressLess(__dirname + '/less'));
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
-app.use(function(req,res,next){
+/*app.use(function(req,res,next){
   if(req.headers['x-forwarded-proto'] != 'https' && process.env.NODE_ENV === 'production') {
     return req.method === "GET"
         ? res.redirect(['https://', req.get('Host'), req.url].join(''))
         : res.sendStatus('400');
   }
   else
-    next() /* Continue to other routes if we're not redirecting */
-});
+    next();
+});*/
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
